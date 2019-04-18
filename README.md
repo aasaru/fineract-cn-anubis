@@ -1,9 +1,4 @@
-TODO switch to apache!
-
-[![Build Status](https://api.travis-ci.com/aasaru/fineract-cn-anubis.svg?branch=travis)](https://travis-ci.com/aasaru/fineract-cn-anubis)
-
-
-# Apache Fineract CN Authorization Library
+# Apache Fineract CN Authorization Library [![Build Status](https://api.travis-ci.com/apache/fineract-cn-anubis.svg?branch=develop)](https://travis-ci.com/apache/fineract-cn-anubis)
 
 This project provides authorization for Apache Fineract CN services.
 
