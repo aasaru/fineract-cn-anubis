@@ -19,6 +19,7 @@
 package org.apache.fineract.cn.anubis.security;
 
 import org.apache.fineract.cn.lang.ApplicationName;
+import org.apache.fineract.cn.lang.config.Health;
 import org.slf4j.Logger;
 import org.springframework.security.access.AccessDecisionVoter;
 import org.springframework.security.access.ConfigAttribute;
@@ -53,6 +54,11 @@ public class UrlPermissionChecker implements AccessDecisionVoter<FilterInvocatio
       final Authentication unAuthentication,
       final FilterInvocation filterInvocation,
       final Collection<ConfigAttribute> attributes) {
+
+    if (filterInvocation.getRequestUrl().contains(Health.HEALTH_URL_CONTEXT_PATH)) {
+      return ACCESS_GRANTED;
+    }
+
     if (!AnubisAuthentication.class.isAssignableFrom(unAuthentication.getClass()))
       return ACCESS_ABSTAIN;
 

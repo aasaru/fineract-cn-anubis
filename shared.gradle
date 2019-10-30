@@ -16,7 +16,7 @@
  */
 
 group 'org.apache.fineract.cn.anubis'
-version '0.1.0-BUILD-SNAPSHOT'
+version '0.0.x-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'idea'
@@ -28,7 +28,7 @@ ext.versions = [
         frameworktest       : '0.1.0-BUILD-SNAPSHOT',
         frameworkapi        : '0.1.0-BUILD-SNAPSHOT',
         frameworkcassandra  : '0.1.0-BUILD-SNAPSHOT',
-        frameworklang       : '0.1.0-BUILD-SNAPSHOT',
+        frameworklang       : '0.0.x-SNAPSHOT',
         jjwt                : '0.6.0',
         hibernatevalidator  : '5.3.0.Final'
 ]

@@ -19,6 +19,7 @@
 package org.apache.fineract.cn.anubis.filter;
 
 import org.apache.fineract.cn.api.util.UserContextHolder;
+import org.apache.fineract.cn.lang.config.Health;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -38,6 +39,11 @@ public class UserContextFilter extends OncePerRequestFilter {
       final HttpServletRequest request,
       final HttpServletResponse response,
       final FilterChain filterChain) throws ServletException, IOException {
+
+    if (request.getRequestURI().contains(Health.HEALTH_URL_CONTEXT_PATH)) {
+      filterChain.doFilter(request, response);
+      return;
+    }
 
     final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
