@@ -40,6 +40,8 @@ public class UserContextFilter extends OncePerRequestFilter {
       final HttpServletResponse response,
       final FilterChain filterChain) throws ServletException, IOException {
 
+    logger.info("filterChain: " + filterChain);
+
     if (request.getRequestURI().contains(Health.HEALTH_URL_CONTEXT_PATH)) {
       filterChain.doFilter(request, response);
       return;
