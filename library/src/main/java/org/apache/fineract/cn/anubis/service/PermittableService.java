@@ -93,11 +93,10 @@ public class PermittableService {
   private static AllowedOperation mapHttpMethod(final String httpMethod) {
     switch (httpMethod) {
       case "GET":
-        return AllowedOperation.READ;
       case "HEAD":
+      case "OPTIONS":
         return AllowedOperation.READ;
       case "POST":
-        return AllowedOperation.CHANGE;
       case "PUT":
         return AllowedOperation.CHANGE;
       case "DELETE":
