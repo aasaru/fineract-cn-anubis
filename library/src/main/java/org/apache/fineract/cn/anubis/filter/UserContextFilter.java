@@ -46,6 +46,11 @@ public class UserContextFilter extends OncePerRequestFilter {
       filterChain.doFilter(request, response);
       return;
     }
+    // TODO temp
+    if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
+      filterChain.doFilter(request, response);
+      return;
+    }
 
     final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
