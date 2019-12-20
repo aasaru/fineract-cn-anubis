@@ -59,6 +59,11 @@ public class UrlPermissionChecker implements AccessDecisionVoter<FilterInvocatio
       return ACCESS_GRANTED;
     }
 
+    // TODO temp for CORS
+    if ("OPTIONS".equalsIgnoreCase(filterInvocation.getRequest().getMethod())) {
+      return ACCESS_GRANTED;
+    }
+
     if (!AnubisAuthentication.class.isAssignableFrom(unAuthentication.getClass()))
       return ACCESS_ABSTAIN;
 
